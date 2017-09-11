@@ -1,12 +1,11 @@
-console.log( "ready!" );
-var output = document.getElementById('output');
-var editor = ace.edit("editor");
-editor.setTheme("ace/theme/monokai");
-editor.getSession().setMode("ace/mode/html");
-var contento;
+$( document ).ready(function() {
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/ambiance");
+    editor.getSession().setMode("ace/mode/html");
 
 
-function code(){
-    var contento = editor.getValue(); 
-    output.innerHTML = contento;
-}
+        $('#editor').keyup(function(){
+        $('#output').html(editor.getValue());
+    });
+
+});
